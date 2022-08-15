@@ -1,38 +1,59 @@
-.App {
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  font-family: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* Comentar o descomentar para ver lo que ocupa cada elemento */
+  /* border: 1px solid black */
+}
+
+body {
+  background-color: white;
+  margin-top: 5px;
+  width: 80%;
   text-align: center;
+  margin-left: 10px;
+}
+
+.cabecera {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5px;
+  /* El fondo blanco es para que no queden los gráficos mal si hay un wallpaper*/
+  background-color: white;
+}
+
+/*  El teléfono tiene un márgen adicional arriba para que quede "alineado" a la vista. */
+.our-phone {
+  margin-top: 5px;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  width: 75px;
+  height: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar {
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-left: 25px;
 }
 
-.App-link {
+.NavBar-item {
+  width: 120px;
+}
+
+.content {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
 }
