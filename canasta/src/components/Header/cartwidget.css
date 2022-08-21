@@ -1,0 +1,6 @@
+.canasta {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    font-size: larger;
+}

@@ -1,0 +1,27 @@
+.nav-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+    /* El fondo blanco es para que no queden los gráficos mal si hay un wallpaper*/
+    background-color: white;
+}
+
+.nav-a {
+    width: 120px;
+}
+
+.app-logo {
+    width: 100px;
+    height: 50px;
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 25px;
+}
