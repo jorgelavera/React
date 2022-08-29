@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar.css';
 import { CartWidget } from './CartWidget.js';
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <nav className='nav-header'>
             <img className='app-logo' src="logo0150p.png" alt="LaroGroup" longdesc="Laro Group"></img>
@@ -11,7 +11,7 @@ const NavBar = () => {
                 <a className='nav-a' href='#'>Contact Us</a>
                 <a className='nav-a' href='#'>Policies</a>
             </ul>
-            <CartWidget />
+            <CartWidget count={props.count}/>
         </nav>
     );
 };
