@@ -1,0 +1,19 @@
+.tarjeta {
+    display: flex;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.img {
+    padding: 5px,5px,5px,5px;
+    width:200px;
+}
+
+.h3 {
+    align-self: center;
+}
+
+.precio {
+    align-self: center;
+    width: 200px;
+}
