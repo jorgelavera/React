@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemCount from '../Count/ItemCount.js'
-import './card.css'
+import './itemdetail.css'
 
 const onAdd = () => {
     // Esto se supone que manda la cantidad al carrito

@@ -16,5 +16,6 @@
 .agregar-carrito {
     min-width: 180px;
     min-height: 25px;
-    margin-top: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
