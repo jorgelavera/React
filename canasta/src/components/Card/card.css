@@ -1,12 +1,38 @@
-.tarjeta {
+.tarjeta-list {
     display: flex;
-    border: 1px solid black;
-    margin: 10px;
+    flex-flow: column nowrap;
+    border: 1px solid grey;
+    margin: 1em 1em 2em 1em;
+    padding: 1em 1em 1em 1em;
+    max-width: 15rem;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 1em dimgray;
+    align-items: flex-start;
+}
+
+.tarjeta-det {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid grey;
+    margin: 1em 1em 2em 1em;
+    padding: 1em 1em 1em 1em;
+    max-width: 50rem;
+    background-color: rgb(254, 248, 239);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 1em dimgray;
+}
+
+.tarjeta-det-der {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    max-width: max-content;
 }
 
 .img {
-    padding: 5px,5px,5px,5px;
-    width:200px;
+    padding: 0.5em, 0.5em, 0.5em, 0.5em;
+    width: 15rem;
 }
 
 .h3 {
@@ -15,5 +41,9 @@
 
 .precio {
     align-self: center;
-    width: 200px;
+    width: 15rem;
+} 
+
+.ver-detalle {
+    align-self: center;
 }

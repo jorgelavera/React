@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { productos } from '../GetProductos/productos';
-import { ItemList } from './ItemList';
+import { productos } from '../GetProductos/productos.js';
+import { ItemList } from './ItemList.js';
 
 const ItemListContainer = () => {
     const [listaProductos, setListaProductos] = useState([]);
@@ -16,7 +16,7 @@ const ItemListContainer = () => {
     }, []);
 
     return (
-        <ItemList productos={listaProductos}/>
+        <ItemList productos={listaProductos} />
     )
 }
 

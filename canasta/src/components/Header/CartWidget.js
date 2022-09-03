@@ -1,3 +1,4 @@
+import React from 'react';
 import './cartwidget.css';
 
 export function CartWidget(props) {

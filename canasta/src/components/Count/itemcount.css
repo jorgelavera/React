@@ -2,19 +2,19 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 1rem;
     align-items: center;
 }
 
 .btn-change {
-    min-width: 50px;
-    min-height: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    min-width: 2rem;
+    min-height: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .agregar-carrito {
-    min-width: 180px;
-    min-height: 25px;
-    margin-top: 5px;
+    min-width: 12rem;
+    min-height: 2rem;
+    margin-top: 1rem;
 }

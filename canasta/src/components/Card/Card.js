@@ -9,16 +9,27 @@ const onAdd = () => {
     console.log('onAdd, todavía no!')
 };
 
-const Card = ({title, img, price, stock}) => {
+export const Card = ({ title, img, price, stock }) => {
     return (
-        <div className='tarjeta'>
-            <h3>{title}</h3>
+        <div className='tarjeta-list'>
             <div><img className='img' src={img} alt={`${title}`} /></div>
+            <h3>{title}</h3>
             <p className='precio'>Precio: ${price}.00</p>
-            <p className='stock'>Disponible: {stock}</p>
-            <ItemCount stock={stock} initial={0} onAdd={onAdd} />
+            <button className="ver-detalle" >Ver Detalle</button>
         </div>
     )
 }
 
-export default Card;
+export const DetCard = ({ title, img, price, stock }) => {
+    return (
+        <div className='tarjeta-det'>
+            <div><img className='img' src={img} alt={`${title}`} /></div>
+            <div className='tarjeta-det-der'>
+                <h3>{title}</h3>
+                <p className='precio'>Precio: ${price}.00</p>
+                <p className='stock'>Disponible: {stock}</p>
+                <ItemCount stock={stock} initial={0} onAdd={onAdd} />
+            </div>
+        </div>
+    )
+}

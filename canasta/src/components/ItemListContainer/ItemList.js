@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '../Card/Card';
+import { Card } from '../Card/Card.js';
+import './itemlist.css'
 
 export const ItemList = ({ productos }) => {
-    // El componente va a recibir una prop `items` y va a mapear estos `items` al componente `<Item … />`
     return (
         <div className='tarjetas'>
             {

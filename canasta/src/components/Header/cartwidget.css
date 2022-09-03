@@ -1,6 +1,6 @@
 .canasta {
     display: flex;
-    margin-top: 5px;
+    margin-top: 0.5rem;
     align-items: center;
     font-size: larger;
 }

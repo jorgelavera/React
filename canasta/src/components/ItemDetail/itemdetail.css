@@ -1,0 +1,7 @@
+.tarjeta-detail {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+} 
