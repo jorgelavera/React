@@ -8,26 +8,23 @@
     background-color: white;
     border-radius: 1em;
     box-shadow: 0.5em 0.5em 1em dimgray;
-    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.tarjeta-det {
+.top-card {
     display: flex;
-    flex-flow: row wrap;
-    border: 1px solid grey;
-    margin: 1em 1em 2em 1em;
-    padding: 1em 1em 1em 1em;
-    max-width: 50rem;
-    background-color: rgb(254, 248, 239);
-    border-radius: 1em;
-    box-shadow: 0.5em 0.5em 1em dimgray;
-}
-
-.tarjeta-det-der {
-    display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
-    max-width: max-content;
+    justify-content: center;
+
+}
+
+.bottom-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+
 }
 
 .img {
@@ -35,15 +32,19 @@
     width: 15rem;
 }
 
-.h3 {
+.texto {
     align-self: center;
 }
 
 .precio {
     align-self: center;
     width: 15rem;
-} 
+}
 
 .ver-detalle {
     align-self: center;
+    justify-content: center;
+    min-width: 12rem;
+    min-height: 2rem;
+    margin-top: 1rem;
 }

@@ -1,0 +1,19 @@
+.tarjeta-det {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid grey;
+    margin: 1em 1em 2em 1em;
+    padding: 1em 1em 1em 1em;
+    max-width: 50rem;
+    background-color: rgb(254, 248, 239);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 1em dimgray;
+}
+
+.tarjeta-det-der {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    max-width: max-content;
+}
+
