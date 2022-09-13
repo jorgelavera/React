@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './item.css'
 import ItemCount from '../Count/ItemCount';
-
-const onAdd = () => {
-    // Esto se supone que manda la cantidad al carrito
-    // pero todavía no vimos cómo pasar hacia el count de acá, desde el count de ItemCount
-    // De todas formas la consigna pide solamente "llamar a la función"
-    console.log('onAdd, todavía no!')
-};
-
+import { Link } from 'react-router-dom';
 
 export const Item = (detail) => {
+    const [tot, setTot] = useState(0);
+    const onAdd = (count) => {
+        console.log('onAdd: ', count)
+    };
+
     console.log('detail: ', detail);
     return (
         <div className='tarjeta-det'>
@@ -19,7 +17,13 @@ export const Item = (detail) => {
                 <h3 className='texto'>{detail.title}</h3>
                 <p className='precio'>Precio: ${detail.price}.00</p>
                 <p className='stock'>Disponible: {detail.stock}</p>
+                {tot === 0 ? (
+                    <p className='stock'>¿No va a comprar?</p>
+                ) : (
+                    <p className='stock'>Agrega al carrito: {tot}</p>
+                    )}
                 <ItemCount stock={detail.stock} initial={0} onAdd={onAdd} />
+                <Link to='/cart'>Ir al carrito</Link>
             </div>
         </div>
     )
