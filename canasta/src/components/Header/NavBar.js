@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const NavBar = (props) => {
     return (
         <nav className='nav-header'>
-            <Link to='/'><img className='app-logo' src="./logo0150p.png" alt="LaroGroup" longdesc="Laro Group"></img></Link>
+            <Link to='/'><img className='app-logo' src="logo0150p.png" alt="LaroGroup" longdesc="Laro Group"></img></Link>
             <ul className='navbar'>
                 <Link className='nav-a' to='/category/Audio'>Audio</Link>
                 <Link className='nav-a' to='/category/Mouse'>Mouses</Link>

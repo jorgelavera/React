@@ -11,6 +11,7 @@ const onAdd = () => {
 
 
 export const Item = (detail) => {
+    console.log('detail: ', detail);
     return (
         <div className='tarjeta-det'>
             <div><img className='img' src={detail.img} alt={`${detail.title}`} /></div>
