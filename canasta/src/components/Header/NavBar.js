@@ -12,7 +12,9 @@ const NavBar = (props) => {
                 <Link className='nav-a' to='/category/Mouse'>Mouses</Link>
                 <Link className='nav-a' to='/category/Teclado'>Teclados</Link>
             </ul>
-            <CartWidget count={props.count} />
+            <Link to="/cart">
+                <CartWidget count={props.count} />
+            </Link>
         </nav>
     );
 };

@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const getProduct = () =>
             new Promise((resolve, reject) => {
-                const unic = productos.find((prod) => prod.id === Number(id));
+                const unic = productos.find((prod) => prod.id === id);
                 setTimeout(() => {
                     resolve(unic);
                 }, 200);
