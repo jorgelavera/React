@@ -26,10 +26,11 @@ export const Item = (detail) => {
                 <p className='precio'>Precio: ${detail.price}.00</p>
                 <p className='stock'>Disponible: {detail.stock}</p>
                 <p className='stock'>Agrega al carrito: {tot}</p>
+                
                 {tot === 0 ? (
                     <ItemCount stock={detail.stock} initial={quantity} onAdd={onAdd} />
                 ) : (
-                    <Link to='/cart'>Ir al carrito</Link>
+                    <Link to='/cart'>Terminar mi compra</Link>
                 )}
             </div>
         </div>

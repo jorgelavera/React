@@ -1,6 +1,5 @@
 import React from 'react';
 import { Item } from '../Card/Item.js';
-import ItemCount from '../Count/ItemCount.js';
 import './itemdetail.css';
 
 export const ItemDetail = ({ product }) => {

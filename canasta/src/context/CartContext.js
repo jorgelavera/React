@@ -1,14 +1,30 @@
 import React from "react";
 import { createContext, useState } from "react";
+import { useEffect } from 'react';
 
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [unidades, setUnidades] = useState();
+
+    useEffect(() => {
+        totalQuantity();
+    }, [cart]);
+
+    const totalQuantity = () => {
+        let totalQ = 0;
+        cart.forEach((prod) => {
+            totalQ += prod.cantidad;
+        });
+        console.log('totalQ: ', totalQ)
+        setUnidades(totalQ);
+        return totalQ;
+    };
 
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
-            AddItem(item, cantidad);
+            totalQuantitySingleProduct(item, cantidad);
         } else {
             setCart([...cart, { ...item, cantidad }]);
         }
@@ -18,23 +34,34 @@ const CartProvider = ({ children }) => {
         return cart.some((prod) => prod.id === id);
     };
 
-    const AddItem = (item, cantidad) => {
-        const carritoActualizado = cart.map((prod) => {
+    const totalQuantitySingleProduct = (item, cantidad) => {
+        const updateProducts = cart.map((prod) => {
             if (prod.id === item.id) {
-                const productoActualizado = {
+                const productUpdated = {
                     ...prod,
-                    cantidad: prod.cantidad + cantidad
-                }
-                return productoActualizado
+                    cantidad: cantidad,
+                };
+
+                return productUpdated;
             } else {
-                return prod
+                return prod;
             }
-        })
+        });
+        setCart(updateProducts);
+    };
+
+    const totalPrice = () => {
+        let total = 0;
+        cart.forEach((prod) => {
+            total += prod.cantidad * prod.price;
+        });
+        return total;
     };
 
     const deleteOne = (id) => {
         const carritoFiltrado = cart.filter((prod) => prod.id !== id);
         setCart(carritoFiltrado);
+        return carritoFiltrado;
     }
 
     const clearCart = () => {
@@ -43,7 +70,6 @@ const CartProvider = ({ children }) => {
 
     const getProductQuantity = (id) => {
         const product = cart.find((prod) => prod.id === id);
-        console.log(product)
         if (product !== undefined) {
             return product.cantidad;
         } else {
@@ -55,9 +81,12 @@ const CartProvider = ({ children }) => {
         <CartContext.Provider
             value={{
                 cart,
+                unidades,
                 addToCart,
                 clearCart,
                 deleteOne,
+                totalPrice,
+                totalQuantity,
                 getProductQuantity,
             }}
         >

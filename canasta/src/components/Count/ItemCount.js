@@ -6,7 +6,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const reducir = () => {
         // Si la cantidad es mayor que la mínima, todavía se puede restar uno
-        if (count > initial) {
+        if (count > 0) {
             setCount(count - 1)
         }
     };
