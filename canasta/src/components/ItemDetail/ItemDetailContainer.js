@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { productos } from '../GetProductos/productos.js';
 import { ItemDetail } from '../ItemDetail/ItemDetail.js';
+import { db } from '../../firebaseConfig';
+import { getDoc, doc, collection } from 'firebase/firestore';
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
-        const getProduct = () =>
-            new Promise((resolve, reject) => {
-                const unic = productos.find((prod) => prod.id === id);
-                setTimeout(() => {
-                    resolve(unic);
-                }, 200);
-            });
-        getProduct()
-            .then(product => setProduct(product))
-            .catch(error => console.error(error))
+        const itemCollection = collection(db, 'productos');
+        const ref = doc(itemCollection, id);
+        getDoc(ref).then((res) => {
+            setProduct({ id: res.id, ...res.data() });
+        });
     }, [id]);
+
     return (
         <div>
             <ItemDetail product={product} />

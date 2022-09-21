@@ -8,10 +8,6 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [unidades, setUnidades] = useState();
 
-    useEffect(() => {
-        totalQuantity();
-    }, [cart]);
-
     const totalQuantity = () => {
         let totalQ = 0;
         cart.forEach((prod) => {
@@ -21,6 +17,10 @@ const CartProvider = ({ children }) => {
         setUnidades(totalQ);
         return totalQ;
     };
+
+    useEffect(() => {
+        totalQuantity();
+    }, [cart]);
 
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
@@ -38,8 +38,7 @@ const CartProvider = ({ children }) => {
         const updateProducts = cart.map((prod) => {
             if (prod.id === item.id) {
                 const productUpdated = {
-                    ...prod,
-                    cantidad: cantidad,
+                    ...prod, cantidad: cantidad,
                 };
 
                 return productUpdated;
