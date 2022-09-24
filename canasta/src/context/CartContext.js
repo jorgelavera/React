@@ -13,14 +13,9 @@ const CartProvider = ({ children }) => {
         cart.forEach((prod) => {
             totalQ += prod.cantidad;
         });
-        console.log('totalQ: ', totalQ)
-        setUnidades(totalQ);
+        setTimeout(() => setUnidades(totalQ), 0);
         return totalQ;
     };
-
-    useEffect(() => {
-        totalQuantity();
-    }, [cart]);
 
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
@@ -75,6 +70,11 @@ const CartProvider = ({ children }) => {
             return 0;
         }
     };
+
+    useEffect(() => {
+        totalQuantity();
+        // eslint-disable-next-line
+    }, [cart]);
 
     return (
         <CartContext.Provider

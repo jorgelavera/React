@@ -1,6 +1,25 @@
-.canasta {
+.canasta-widget {
     display: flex;
+    flex-flow: row nowrap;
     margin-top: 0.5rem;
     align-items: center;
     font-size: larger;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+a:active {
+    text-decoration: underline;
 }

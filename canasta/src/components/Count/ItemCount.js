@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './itemcount.css';
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
 
+    useEffect(() => {
+        setCount(initial);
+    }, [initial]);
+
     const reducir = () => {
-        // Si la cantidad es mayor que la mínima, todavía se puede restar uno
+        // Si la cantidad es mayor que cero, todavía se puede restar uno
         if (count > 0) {
             setCount(count - 1)
         }
@@ -22,7 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <div>
             <div className="counter-block">
                 <button className="btn-change" onClick={reducir}>-</button>
-                <p>Count: {count} </p>
+                <p>Cantidad: {count} </p>
                 <button className="btn-change" onClick={aumentar}>+</button>
             </div>
             <div>

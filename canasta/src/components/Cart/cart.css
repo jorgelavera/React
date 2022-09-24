@@ -2,4 +2,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    margin-top: 0.5rem;
+    align-items: center;
 }

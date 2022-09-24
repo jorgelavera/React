@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './cartwidget.css';
-import { useContext } from "react";
 import { CartContext } from '../../context/CartContext.js'
 
 export function CartWidget() {
     const { totalQuantity } = useContext(CartContext);
-    const cantidadTotal = totalQuantity();
 
-return (
+    const cantidadTotal = totalQuantity();
+    let cantidad;
+    cantidadTotal === 0 ? cantidad = '' : cantidad = cantidadTotal;
+
+    return (
         <>
-            <div className='canasta'>
+            <div className='canasta-widget'>
                 <span className="material-icons">shopping_cart</span>
-                <span>{cantidadTotal}</span>
+                <span>{cantidad}</span>
             </div>
         </>
     );
+
 };
 

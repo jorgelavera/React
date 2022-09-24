@@ -1,0 +1,15 @@
+.linea-canasta {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border: 2px solid rgb(198, 198, 198);
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+}
+
+.boton-borrar{
+    height: 2rem;
+    width: 10rem;
+}

@@ -6,14 +6,14 @@ import { getDoc, doc, collection } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const { id } = useParams();
 
     useEffect(() => {
         const itemCollection = collection(db, 'productos');
         const ref = doc(itemCollection, id);
-        getDoc(ref).then((res) => {
-            setProduct({ id: res.id, ...res.data() });
+        getDoc(ref).then((resolve) => {
+            setProduct({ id: resolve.id, ...resolve.data() });
         });
     }, [id]);
 
