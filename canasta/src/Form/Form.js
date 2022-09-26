@@ -19,8 +19,10 @@ const Form = ({ cart, total, clearCart, handleId }) => {
 
         addDoc(ordersCollection, order).then((resolve) => {
             handleId(resolve.id);
-            updateprod();
             clearCart();
+            updateprod();
+        }).catch(err => {
+            // just ignore it, it doesn't matter
         });
     };
 

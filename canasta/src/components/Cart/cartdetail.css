@@ -1,7 +1,7 @@
 .linea-canasta {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
     border: 2px solid rgb(198, 198, 198);
     margin-bottom: 1rem;
     padding-top: 0.5rem;
